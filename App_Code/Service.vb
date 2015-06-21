@@ -1,6 +1,6 @@
 ﻿' If you do not need this Web Service to be called from script, using ajax / xhr, comment the following line.
 <ScriptService()> _
-<WebService(Namespace:="http://api.wppetitions.com/")> _
+<WebService(Namespace:="http://localhost/client-server-backbone-sample/")> _
 <WebServiceBinding(ConformsTo:=WsiProfiles.BasicProfile1_1)> _
 Public Class Service : Inherits WebService
 
@@ -82,59 +82,6 @@ Public Class Service : Inherits WebService
     End Function
 
     <WebMethod()> _
-    Public Function NewSite( _
-            ByVal site_domain As Object, _
-            ByVal site_title As Object, _
-            ByVal admin_email As Object _
-        ) As Object()
-
-        'Threading.Thread.Sleep(3000)
-
-        Dim list As New List(Of Object)()
-        Dim dict As New Dictionary(Of String, Object)()
-
-        Try
-            ' query the database
-            MyDataProvider.SqlConnect()
-
-            '*** Create timer
-            MyDataProvider.SqlNewCommand("dbo.newSite", "sp")
-
-            ' INs
-            MyDataProvider.SqlNewParam("Input", "@Domain", site_domain, SqlDbType.VarChar, 255)
-            MyDataProvider.SqlNewParam("Input", "@Title", site_title, SqlDbType.NVarChar, 255)
-            MyDataProvider.SqlNewParam("Input", "@Email", admin_email, SqlDbType.VarChar, 255)
-
-            ' OUTs
-            MyDataProvider.SqlNewParam("Output", "@SiteID", Nothing, SqlDbType.Int, 0)
-
-            ' Execute
-            MyDataProvider.SqlExecuteCommand()
-
-            'Get Output Value(s)
-            Dim siteId As Integer = Convert.ToInt32(MyDataProvider.SqlOutputParamValue("@SiteID"))
-
-            dict.Add("SiteID", siteId)
-            list.Add(dict)
-
-        Catch sqlEx As SqlException
-            dict.Add("Error", sqlEx.ToString())
-            list.Add(dict)
-
-        Catch ex As Exception
-            dict.Add("Error", ex.ToString())
-            list.Add(dict)
-
-        Finally
-            MyDataProvider.SqlDisconnect()
-
-        End Try
-
-        Return list.ToArray()
-
-    End Function
-
-    <WebMethod()> _
     Public Function GetSignatures( _
         ) As Object()
 
@@ -149,42 +96,6 @@ Public Class Service : Inherits WebService
 
             '*** Get [Users] table
             MyDataProvider.SqlNewCommand("dbo.getSignatures", "sp")
-            MyDataProvider.SqlNewAdapter(MyDataProvider.SqlCmd)
-            MyDataProvider.SqlFillDataTable()
-            list = DataTableToList(MyDataProvider.SqlDataTable)
-
-        Catch sqlEx As SqlException
-            dict.Add("Error", sqlEx.ToString())
-            list.Add(dict)
-
-        Catch ex As Exception
-            dict.Add("Error", ex.ToString())
-            list.Add(dict)
-
-        Finally
-            MyDataProvider.SqlDisconnect()
-
-        End Try
-
-        Return list.ToArray()
-
-    End Function
-
-    <WebMethod()> _
-    Public Function GetSites( _
-        ) As Object()
-
-        'Threading.Thread.Sleep(5000)
-
-        Dim list As New List(Of Object)()
-        Dim dict As New Dictionary(Of String, Object)()
-
-        Try
-            ' query the database
-            MyDataProvider.SqlConnect()
-
-            '*** Get [Users] table
-            MyDataProvider.SqlNewCommand("dbo.getSites", "sp")
             MyDataProvider.SqlNewAdapter(MyDataProvider.SqlCmd)
             MyDataProvider.SqlFillDataTable()
             list = DataTableToList(MyDataProvider.SqlDataTable)
