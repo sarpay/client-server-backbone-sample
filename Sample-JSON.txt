@@ -1,0 +1,18 @@
+﻿{
+    "petitions_id": "1",
+    "first_name": "Nikolai",
+    "last_name": "Gladkikh",
+    "email": "nikolai.gladkikh@gmail.com",
+    "date": "2015-06-15 13:40:30",
+    "confirmation_code": "",
+    "is_confirmed": "",
+    "optin": 1,
+    "street_address": "",
+    "city": "",
+    "state": "",
+    "postcode": "",
+    "country": "",
+    "custom_field": "",
+    "custom_message": "",
+    "language": ""
+}

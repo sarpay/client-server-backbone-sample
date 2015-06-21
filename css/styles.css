@@ -1,0 +1,174 @@
+﻿body {
+    font-family: 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+}
+
+body:after { /** preload these images **/
+    display:none;
+    /*content: url('../gfx/header_merkrete.png');*/
+}
+
+.chkBoxLabel {
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+    width: 150px;
+	width: 180px !important;
+	font-size: 12px !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	
+}
+input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin: 0;
+    margin-left: 4px;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}
+
+/* ------------ */
+/* grid styling */
+/* ------------ */
+
+.k-grid {
+    border-radius: 4px;
+}
+
+/* header toolbar */
+.k-grid .k-toolbar {
+    min-height: 27px;
+    padding: 0.7em 0.6em 0.7em 0.6em;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.grid-title-div {
+    float: left;
+    margin-top: 3px;
+}   
+.grid-title-span {
+    font-size: 18px;
+    font-weight: bold;
+}           
+.search-label {
+    vertical-align: middle;
+    padding-right: .5em;
+}           
+#searchbox {
+    vertical-align: middle;
+}
+.k-grid-AddRow { /* "Add new timer" button */
+    padding-top: 3px;
+}
+
+/* pager */
+.k-grid-pager {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* all grid icons */
+.k-icon {
+    margin-bottom: 2px;
+}
+
+/* selected row */
+.k-state-selected {
+	background-image: none !important;
+	color: #515967 !important;
+	background-color: #EEEEEE !important;
+	border-color: #EEEEEE !important;
+}
+
+/* detail grid */
+.k-grid .k-widget {
+    border-radius: 4px;
+}
+.k-tabstrip>.k-content {
+    /*border-width: 1px !important;*/
+    margin: 0 .33em .3em !important;
+    padding: 0px !important;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.k-tabstrip-items .k-item {
+    border-bottom-width: 1px !important;
+}
+
+/* -------------------- */
+/* popup window styling */
+/* -------------------- */
+
+div.k-edit-form-container {
+    width: 650px !important;
+}
+
+.k-window-titlebar {
+    font-size: 1.2em !important;
+}
+
+.k-window-title {
+    bottom: 4px !important;
+}
+
+.k-window-titlebar .k-window-actions {
+    padding-top: .15em !important;
+}
+
+/* validation tooltip */
+.k-warning {
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+
+/*
+div.k-edit-form-container .k-edit-field:first-of-type {
+    padding-top: .6em !important;
+    padding-bottom: 0 !important;
+}
+*/
+
+div.k-edit-form-container .k-numerictextbox {
+    width: 6em !important;
+}
+
+div.k-edit-form-container .k-textbox {
+    width: 23em !important;
+}
+
+div.k-edit-form-container .k-edit-field {
+    width: 65% !important;
+}
+
+div.k-edit-form-container .k-edit-label {
+    width: 25% !important;
+    text-align: left;
+}
+
+/* ------------ */
+/* menu styling */
+/* ------------ */
+
+.k-menu.k-header {
+    border-radius: 4px;
+    /*border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;*/
+}
+
+#divMenu {
+	padding-top: 10px;
+	margin-bottom: 10px;
+	/*background: url('../gfx/header_merkrete.png');*/
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-color: #ffffff;
+	border-radius: 4px;
+	font-size: 16px;
+}
+
+#divMenu ul { margin-top: 80px; }

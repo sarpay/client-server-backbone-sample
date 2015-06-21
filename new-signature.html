@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Petitions - Signature Post Test</title>
+    <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,800,700' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            font-family: "Open Sans";
+        }
+        input {
+            width: 200px;
+        }
+        input ~ .req-msg {
+            width: 20px;
+        }
+        input:required ~ .req-msg {
+            background-image: url(images/req.png);
+            background-position: left center;
+            background-repeat: no-repeat;
+            width: 16px;
+            height: 16px;
+            margin: 4px 4px 0 0;
+        }
+        input:invalid ~ .validation-msg, input:focus:invalid ~ .validation-msg {
+            background-image: url(images/invalid.png);
+            background-position: right top;
+            background-repeat: no-repeat;
+        }
+        input:valid ~ .validation-msg, input:focus:valid ~ .validation-msg {
+            background-image: url(images/valid.png);
+            background-position: right top;
+            background-repeat: no-repeat;
+        }
+        div.req-msg 
+        {
+            float: left;
+            
+        }
+        div.validation-msg 
+        {
+            float: right;
+            width: 16px;
+            height: 16px;
+            margin: 2px 0 0 5px;
+        }
+    </style>
+    <script src="js/lib/jquery.min.js" type="text/javascript"></script>
+</head>
+    <body>
+
+        <div style="float: left;">
+            <form id="signature">
+                <h3>PETITION SIGNATURE SAMPLE FORM</h3>
+                <table>
+                    <tr>
+                        <td><label for="site_id">Site ID [site_id]</label></td>
+                        <td>
+                            <input type="number" id="site_id" name="site_id" placeholder="integer" required min="1" autofocus />
+                            <div class="req-msg"></div>
+                            <div class="validation-msg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="petition_id">Petition ID [petition_id]</label></td>
+                        <td>
+                            <input type="number" id="petition_id" name="petition_id" placeholder="integer" required min="1" />
+                            <div class="req-msg"></div>
+                            <div class="validation-msg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email [email]</label></td>
+                        <td>
+                            <input type="email" id="email" name="email" required>
+                            <div class="req-msg"></div>
+                            <div class="validation-msg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="first_name">First Name [first_name]</label></td>
+                        <td>
+                            <input type="text" id="first_name" name="first_name" required>
+                            <div class="req-msg"></div>
+                            <div class="validation-msg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="last_name">Last Name [last_name]</label></td>
+                        <td>
+                            <input type="text" id="last_name" name="last_name" required>
+                            <div class="req-msg"></div>
+                            <div class="validation-msg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="address">Address [address]</label></td>
+                        <td>
+                            <input type="text" id="address" name="address">
+                            <div class="req-msg">&nbsp;</div>
+                            <div class="validation-msg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="city">City [city]</label></td>
+                        <td>
+                            <input type="text" id="city" name="city">
+                            <div class="req-msg">&nbsp;</div>
+                            <div class="validation-msg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="state">State [state]</label></td>
+                        <td>
+                            <input type="text" id="state" name="state">
+                            <div class="req-msg">&nbsp;</div>
+                            <div class="validation-msg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="zipcode">Zip Code [zipcode]</label></td>
+                        <td>
+                            <input type="text" id="zipcode" name="zipcode">
+                            <div class="req-msg">&nbsp;</div>
+                            <div class="validation-msg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="country">Country [country]</label></td>
+                        <td>
+                            <input type="text" id="country" name="country">
+                            <div class="req-msg">&nbsp;</div>
+                            <div class="validation-msg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="age_group">Age Group [age_group]</label></td>
+                        <td>
+                            <input type="number" id="age_group" name="age_group"  placeholder="1 - 4" min="1" max="4">
+                            <div class="req-msg">&nbsp;</div>
+                            <div class="validation-msg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="gender">Gender [gender]</label></td>
+                        <td>
+                            <input type="number" id="gender" name="gender" placeholder="1 (male) or 2 (female)" min="1" max="2">
+                            <div class="req-msg">&nbsp;</div>
+                            <div class="validation-msg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="political_id">PoliticalId [political_id]</label></td>
+                        <td>
+                            <input type="number" id="political_id" name="political_id" placeholder="1 - 7" min="1" max="7">
+                            <div class="req-msg">&nbsp;</div>
+                            <div class="validation-msg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="opt_in">Opt-In [opt_in]</label></td>
+                        <td>
+                            <input type="number" id="opt_in" name="opt_in" placeholder="0 or 1" min="0" max="1">
+                            <div class="req-msg">&nbsp;</div>
+                            <div class="validation-msg"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="padding-left: 20px">
+                            <button id="submitButton" type="submit" style="width: 204px;">SUBMIT</button>
+                        </td>
+                    </tr>
+                </table>
+        
+            </form>
+        </div>
+        
+        <div style="float: left; margin: 0 0 30px 100px;">
+            <h3>RAW JSON DATA</h3>
+            <textarea id="raw-json" cols=50 rows=25>
+{
+    "site_id":null,
+    "petition_id":null,
+    "email":"",
+    "first_name":"",
+    "last_name":"",
+    "address":"",
+    "city":"",
+    "state":"",
+    "zipcode":"",
+    "country":"",
+    "age_group":null,
+    "gender":null,
+    "political_id":null,
+    "opt_in":null
+}           
+            </textarea><br/>
+            <button id="raw-json-submitBtn" type="button">SUBMIT</button>
+        </div>
+        
+        <div style="float: left; margin: 0 0 30px 100px;">
+            <h3 style="display: none">POSTED JSON DATA</h3>
+            <div id="json" style="white-space: pre"></div>
+        </div>
+    
+        <div style="clear: left; padding-top: 20px">
+            <h3 style="display: none">SERVER RESPONSE</h3>
+            <div id="response"></div>
+        </div>
+    
+        <script src="js/new-signature.js" type="text/javascript"></script>
+        <script src="js/global.js" type="text/javascript"></script>
+
+    </body>
+
+</html>
